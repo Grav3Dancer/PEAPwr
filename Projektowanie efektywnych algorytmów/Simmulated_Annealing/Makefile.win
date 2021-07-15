@@ -1,0 +1,28 @@
+# Project: peapea6
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = ../peapea6/main.o
+LINKOBJ  = ../peapea6/main.o
+LIBS     = -L"F:/Programy dodatkowe/Dev C++/Dev-Cpp/MinGW64/lib" -L"F:/Programy dodatkowe/Dev C++/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"F:/Programy dodatkowe/Dev C++/Dev-Cpp/MinGW64/include" -I"F:/Programy dodatkowe/Dev C++/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"F:/Programy dodatkowe/Dev C++/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"F:/Programy dodatkowe/Dev C++/Dev-Cpp/MinGW64/include" -I"F:/Programy dodatkowe/Dev C++/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"F:/Programy dodatkowe/Dev C++/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"F:/Programy dodatkowe/Dev C++/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = peapea6.exe
+CXXFLAGS = $(CXXINCS) -std=c++11
+CFLAGS   = $(INCS) -std=c++11
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+../peapea6/main.o: ../peapea6/main.cpp
+	$(CPP) -c ../peapea6/main.cpp -o ../peapea6/main.o $(CXXFLAGS)
